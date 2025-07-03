@@ -12,7 +12,9 @@ const handleLogin=()=>{
 
   return (
     <div style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
+      <h1>Login here</h1>
       <AuthField type_of_auth='login' onSubmit={handleLogin}/>
+      <span><Typography>or</Typography></span>
       <Button onClick={()=>navigate('/auth/register')}><Typography>Register</Typography></Button>
       
     </div>

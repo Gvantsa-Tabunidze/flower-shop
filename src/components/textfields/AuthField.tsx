@@ -1,12 +1,19 @@
 import type { AuthFormProps } from '@/interfaces/AuthFormProps'
-import { Box, Button, ButtonGroup, TextField, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup, InputAdornment, TextField, Typography } from '@mui/material'
 import React, { useState, type ChangeEvent, type FormEvent } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
+import AuthInput from './AuthInput'
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LockOutlineIcon from '@mui/icons-material/LockOutline';
 
 const AuthField:React.FC<AuthFormProps> = ({type_of_auth, onSubmit}) => {
+
+  const navigate= useNavigate()
   const [userData, setUserData]=useState({
     email:'',
     password:''
   })
+
 
   const handleInputChange =(e:ChangeEvent<HTMLInputElement>)=>{
     const {name, value} = e.target as HTMLInputElement;
@@ -20,12 +27,16 @@ const AuthField:React.FC<AuthFormProps> = ({type_of_auth, onSubmit}) => {
 
   return (
     <Box  component="form" onSubmit={handleSubmit}
-      sx={{ '& > :not(style)': { m: 2, width: '40ch' }, display:'flex', flexDirection:'column'}}>
-      <TextField label="Email" name='email' value ={userData.email} onChange={handleInputChange} variant="standard" />
-      <TextField label="Password" name='password' value={userData.password} onChange={handleInputChange} variant="standard" />
-     <div style={{display:'flex', gap:'12px', justifyContent:'center'}}>
-      <Button type='submit'><Typography>{type_of_auth==='login' ? 'Login' : 'Register'}</Typography></Button>
-      </div>
+      sx={{ '& > :not(style)': { m: 2, width: '50ch' }, display:'flex', flexDirection:'column'}}>
+        <AuthInput label='Email' name='email' value={userData.email} onChange={handleInputChange} variant='standard' fullWidth
+         InputProps={{
+          startAdornment:(<InputAdornment position='start'><MailOutlineIcon /></InputAdornment>)}} />
+
+        <AuthInput label='Password' name='password' value={userData.password} onChange={handleInputChange}  variant='standard'  fullWidth
+        InputProps={{
+          startAdornment:(<InputAdornment position='start'><LockOutlineIcon /></InputAdornment>)}} />
+        <Button type='submit'><Typography>{type_of_auth==='login' ? 'Login' : 'Register'}</Typography></Button>
+        
      
     </Box>
 

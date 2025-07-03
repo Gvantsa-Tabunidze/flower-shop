@@ -7,8 +7,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routes } from './routes'
 import UnauthorizedPage from '@/pages/UnauthorizedPage'
-import Login from '@/components/Login'
-import Register from '@/components/Register'
+import Login from '@/components/authcomponents/Login'
+import Register from '@/components/authcomponents/Register'
 
 
 const Router:React.FC = () => {
