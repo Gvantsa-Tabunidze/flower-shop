@@ -8,7 +8,7 @@ import LockOutlineIcon from '@mui/icons-material/LockOutline';
 
 const AuthField:React.FC<AuthFormProps> = ({type_of_auth, onSubmit}) => {
 
-  const navigate= useNavigate()
+  
   const [userData, setUserData]=useState({
     email:'',
     password:''

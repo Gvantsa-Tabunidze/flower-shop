@@ -13,12 +13,18 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import type { NavbarProps } from '@/interfaces/NavbarProps';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
+import { logout } from '@/store/auth/auth.slice';
 
 
 const settings = ['Profile', 'Logout'];
 
 const Navbar:React.FC<NavbarProps> = ({routes})=> {
   const navigate = useNavigate()
+
+  //Use action here
+  const dispatch = useAppDispatch()
+   
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -31,12 +37,17 @@ const Navbar:React.FC<NavbarProps> = ({routes})=> {
   };
 
   const handleCloseNavMenu = (path:string) => {
-    navigate(path)
     setAnchorElNav(null);
+   
+    navigate(path)
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (setting?:string) => {
     setAnchorElUser(null);
+     if(setting==='Logout'){
+      dispatch(logout()),
+      navigate('/auth')
+    }
   };
 
   return (
@@ -113,10 +124,10 @@ const Navbar:React.FC<NavbarProps> = ({routes})=> {
                 horizontal: 'right',
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              onClose={()=>handleCloseUserMenu()}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={()=>handleCloseUserMenu(setting)}>
                   <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                 </MenuItem>
               ))}

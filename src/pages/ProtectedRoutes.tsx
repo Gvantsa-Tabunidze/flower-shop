@@ -1,10 +1,12 @@
+import { useAppSelector } from '@/hooks/reduxHooks'
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 
-const auth = {token:true}
-const ProtectedRoutes = () => {
 
-return auth.token ? <Outlet /> : <Navigate to ={'/auth'} />
+const ProtectedRoutes = () => {
+ const {authToken}= useAppSelector(state=>state.authReducer)
+
+return authToken ? <Outlet /> : <Navigate to ={'/auth'} />
 }
 
 export default ProtectedRoutes

@@ -1,13 +1,18 @@
 import AuthField from '@/components/textfields/AuthField'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks'
+import { registerUser } from '@/store/auth/asyncThunks'
 import { Button, Typography } from '@mui/material'
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const navigate=useNavigate()
+  const dispatch = useAppDispatch()
 
-  const handleRegister =()=>{
-    console.log('hey you are registered successfully')
+  
+
+  const handleRegister =(formData:{email: string; password: string})=>{
+    dispatch(registerUser(formData))
+    
   }
   return (
     <div style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
