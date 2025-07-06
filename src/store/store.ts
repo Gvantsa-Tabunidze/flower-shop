@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import authReducer from './auth/auth.slice'
+import flowersReducer from './flowers/flowers.slice'
 
 //State
 const rootReducer = combineReducers({
-authReducer
+authReducer,
+flowersReducer
 })
 export type RootState = ReturnType<typeof rootReducer>
 

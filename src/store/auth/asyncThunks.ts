@@ -1,4 +1,4 @@
-import type { AuthPayload } from "@/interfaces/authPayload";
+import type { AuthPayload } from "@/interfaces/auth/authPayload";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 

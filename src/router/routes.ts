@@ -1,4 +1,4 @@
-import type { IRoute } from "@/interfaces/RouteInterface";
+import type { IRoute } from "@/interfaces/route/RouteInterface";
 
 export const routes:IRoute[] = [
     {path:'/', label:'Home'},

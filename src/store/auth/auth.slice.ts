@@ -1,4 +1,4 @@
-import type { IAuthState } from "@/interfaces/authStateInterface"
+import type { IAuthState } from "@/interfaces/auth/authStateInterface"
 import { createSlice} from "@reduxjs/toolkit"
 import { loginUser } from "./asyncThunks"
 

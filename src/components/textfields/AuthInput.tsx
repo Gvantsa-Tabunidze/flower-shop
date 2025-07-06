@@ -1,4 +1,4 @@
-import type { IInput } from '@/interfaces/AuthInputInterface'
+import type { IInput } from '@/interfaces/auth/AuthInputInterface'
 import { TextField } from '@mui/material'
 import React from 'react'
 
