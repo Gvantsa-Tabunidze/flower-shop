@@ -1,6 +1,7 @@
 import type { IAuthState } from "@/interfaces/auth/authStateInterface"
 import { createSlice} from "@reduxjs/toolkit"
-import { loginUser } from "./asyncThunks"
+import { loginUser, registerUser } from "./asyncThunks"
+
 
 
 
@@ -33,7 +34,22 @@ const authSlice = createSlice({
         builder.addCase(loginUser.rejected, (state, action)=>{
             state.isLoading=false,
             state.error=action.payload as string
-        })
+        });
+
+        builder.addCase(registerUser.fulfilled, (state, action)=>{
+            state.authToken=action.payload
+             localStorage.setItem('authToken', action.payload)
+             state.isLoading=false,
+             state.error=null
+        }),
+        builder.addCase(registerUser.pending, (state) => {
+            state.isLoading = true;
+            state.error = null;
+        }),
+         builder.addCase(registerUser.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.payload as string;
+        });
 
     }
 })

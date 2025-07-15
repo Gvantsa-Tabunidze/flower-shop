@@ -1,14 +1,12 @@
 import type { AuthFormProps } from '@/interfaces/AuthFormProps'
-import { Box, Button, ButtonGroup, InputAdornment, TextField, Typography } from '@mui/material'
+import { Box, Button, InputAdornment,  Typography } from '@mui/material'
 import React, { useState, type ChangeEvent, type FormEvent } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
 import AuthInput from './AuthInput'
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlineIcon from '@mui/icons-material/LockOutline';
 
-const AuthField:React.FC<AuthFormProps> = ({type_of_auth, onSubmit}) => {
 
-  
+const AuthField:React.FC<AuthFormProps> = ({type_of_auth, onSubmit}) => {
   const [userData, setUserData]=useState({
     email:'',
     password:''
@@ -36,8 +34,6 @@ const AuthField:React.FC<AuthFormProps> = ({type_of_auth, onSubmit}) => {
         InputProps={{
           startAdornment:(<InputAdornment position='start'><LockOutlineIcon /></InputAdornment>)}} />
         <Button type='submit'><Typography>{type_of_auth==='login' ? 'Login' : 'Register'}</Typography></Button>
-        
-     
     </Box>
 
   )
