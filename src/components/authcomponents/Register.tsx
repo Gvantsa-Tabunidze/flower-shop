@@ -13,10 +13,10 @@ const Register = () => {
 
   useEffect(()=>{
    if(authToken){
-    toast.success('Hello baddy, you\'ve done successfull registration', {
-      position: "top-right"
+    toast.success('Hello friend, you\'ve done successfull registration', {
+      position: "top-center"
     })
-      setTimeout(()=>navigate('/'), 2000) 
+      setTimeout(()=>navigate('/'), 5000) 
     }
   },[authToken, navigate])
 
@@ -31,7 +31,7 @@ const Register = () => {
   return (
     <div style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
       <ToastContainer
-          position="top-right"
+          position="top-center"
           autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}

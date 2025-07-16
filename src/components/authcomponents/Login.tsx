@@ -17,10 +17,10 @@ const handleLogin=(formData:{email: string; password: string})=>{
 
 useEffect(()=>{
  if(authToken){
-   toast.success('Hello baddy, you\'ve done successfull login', {
-        position: "top-right"
+   toast.success('Hello friend, you\'ve done successfull login', {
+        position: "top-center"
       })
-        setTimeout(()=>navigate('/'), 3000) 
+        setTimeout(()=>navigate('/'), 5000) 
       }
   
   
