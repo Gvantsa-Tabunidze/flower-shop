@@ -1,4 +1,4 @@
 export interface IbaseCard {
     name:string,
-    description:string
+    category:string
 }

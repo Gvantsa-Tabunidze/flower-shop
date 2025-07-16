@@ -17,8 +17,8 @@ console.log(flowersList)
 
   return (
     <div>
-        {flowersList.length > 0 ? flowersList.map(({id,name,description,price,category, img})=>
-       <FlowerCard key={id} name={name}  description={description} price={price} category={category} img={img}/>
+        {flowersList.length > 0 ? flowersList.map(({id,name,price,category, img, inStock, origin, bestSeller})=>
+       <FlowerCard key={id} name={name}  price={price}  category={category} inStock={inStock}  img={img} origin={origin} bestSeller={bestSeller}/>
     ) : <h2>Fetching flowers failed</h2>}
       
     </div>

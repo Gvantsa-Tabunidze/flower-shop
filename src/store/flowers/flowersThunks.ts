@@ -6,7 +6,7 @@ export const getFlowers = createAsyncThunk(
     'flowers/getFlowers',
     async (_, thunkAPI) => {
     try {
-        const response = await axios.get('http://localhost:5001/flowers')
+        const response = await axios.get('http://localhost:5001/plants')
         return response.data
     
     } catch (error) {

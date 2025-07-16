@@ -1,10 +1,11 @@
 export interface ISingleFlower{
     id:string
     name: string,
-    description: string,
+    category: string,
     price:string,
     img:string,
-    category:string,
-    isPopular?:string
+    inStock:boolean,
+    bestSeller: boolean,
+    origin:string
 }
 

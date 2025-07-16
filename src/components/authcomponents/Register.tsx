@@ -16,7 +16,7 @@ const Register = () => {
     toast.success('Hello friend, you\'ve done successfull registration', {
       position: "top-center"
     })
-      setTimeout(()=>navigate('/'), 5000) 
+      setTimeout(()=>navigate('/'), 3000) 
     }
   },[authToken, navigate])
 

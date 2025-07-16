@@ -20,7 +20,7 @@ useEffect(()=>{
    toast.success('Hello friend, you\'ve done successfull login', {
         position: "top-center"
       })
-        setTimeout(()=>navigate('/'), 5000) 
+        setTimeout(()=>navigate('/'), 3000) 
       }
   
   
