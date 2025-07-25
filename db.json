@@ -3,7 +3,7 @@
   {
     "name": "Lavender",
     "price": 2.5,
-    "category": "perennials",
+    "category": "Perennials",
     "inStock": true,
     "bestSeller": true,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671520/lavender_sx61s0.jpg",
@@ -12,7 +12,7 @@
   {
     "name": "Zinnia",
     "price": 1.2,
-    "category": "annual",
+    "category": "Annual",
     "inStock": true,
     "bestSeller": false,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671520/zinia_kxkbd7.jpg",
@@ -21,7 +21,7 @@
   {
     "name": "Lilac",
     "price": 3.0,
-    "category": "perennials",
+    "category": "Perennials",
     "inStock": false,
     "bestSeller": false,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671223/lilac_nmzocq.jpg",
@@ -30,7 +30,7 @@
   {
     "name": "Clematis",
     "price": 1.8,
-    "category": "perennials",
+    "category": "Perennials",
     "inStock": true,
     "bestSeller": true,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671520/clematis_hbp56z.jpg",
@@ -39,7 +39,7 @@
   {
     "name": "Hydrangea",
     "price": 5.0,
-    "category": "perennials",
+    "category": "Perennials",
     "inStock": true,
     "bestSeller": false,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671223/hydrangea_qm6nov.jpg",
@@ -48,7 +48,7 @@
   {
     "name": "Sweetpeas",
     "price": 5.0,
-    "category": "perennials",
+    "category": "Perennials",
     "inStock": true,
     "bestSeller": false,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671223/sweatpeas_cavglf.jpg",
@@ -57,7 +57,7 @@
   {
     "name": "Pink Rose",
     "price": 5.0,
-    "category": "perennials",
+    "category": "Perennials",
     "inStock": true,
     "bestSeller": false,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671223/pink_rose_t1uwd1.jpg",
@@ -66,7 +66,7 @@
   {
     "name": "Hollycocks",
     "price": 5.0,
-    "category": "biennial",
+    "category": "Biennial",
     "inStock": true,
     "bestSeller": false,
     "img": "https://res.cloudinary.com/dp6jtpytm/image/upload/v1752671108/hollycocks_cekvqi.jpg",
