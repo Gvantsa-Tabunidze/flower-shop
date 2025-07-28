@@ -1,10 +1,9 @@
 import CardsList from '@/components/cards/CardsList'
-import React from 'react'
+
 
 const Home = () => {
   return (
-    <div style={{display:'flex', flexDirection:'column'}}>
-      <h1>Hey! It's a home-page</h1>
+    <div style={{display:'flex', flexDirection:'column',padding:'0px 200px 0px 200px', paddingTop:'100px'}}>
       <CardsList />
     </div>
   )
