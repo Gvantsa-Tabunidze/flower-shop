@@ -9,6 +9,7 @@ import { routes } from './routes'
 import UnauthorizedPage from '@/pages/UnauthorizedPage'
 import Login from '@/components/authcomponents/Login'
 import Register from '@/components/authcomponents/Register'
+import Subscription from '@/pages/Subscribtion'
 
 
 const Router:React.FC = () => {
@@ -17,9 +18,10 @@ const Router:React.FC = () => {
    <Routes>
         <Route element={<ProtectedRoutes/>}>
             <Route path='/' element={<Navbar routes={routes}/>}>
-                <Route  index element={<Home/>}/>
+                <Route  index element={<Home/>} />
                 <Route path='/about' element={<About/>}/>
                 <Route path='/products' element={<Products/>}/>
+                <Route path='/subscribtion' element={<Subscription />}/>
             </Route>
         </Route>
 
