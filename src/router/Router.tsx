@@ -1,36 +1,38 @@
-import Navbar from '@/components/navbar/Navbar'
-import ProtectedRoutes from '@/pages/ProtectedRoutes'
-import About from '@/pages/About'
-import Home from '@/pages/Home'
-import Products from '@/pages/Products'
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { routes } from './routes'
-import UnauthorizedPage from '@/pages/UnauthorizedPage'
-import Login from '@/components/authcomponents/Login'
-import Register from '@/components/authcomponents/Register'
-import Subscription from '@/pages/Subscribtion'
+import { createBrowserRouter } from "react-router-dom";
 
+import Navbar from "@/components/navbar/Navbar";
+import ProtectedRoutes from "@/pages/ProtectedRoutes";
+import About from "@/pages/About";
+import Home from "@/pages/Home";
+import Products from "@/pages/Products";
+import UnauthorizedPage from "@/pages/UnauthorizedPage";
+import Login from "@/components/authcomponents/Login";
+import Register from "@/components/authcomponents/Register";
+import Subscription from "@/pages/Subscribtion";
+import { routes } from "./routes";
 
-const Router:React.FC = () => {
-  
-  return (
-   <Routes>
-        <Route element={<ProtectedRoutes/>}>
-            <Route path='/' element={<Navbar routes={routes}/>}>
-                <Route  index element={<Home/>} />
-                <Route path='/about' element={<About/>}/>
-                <Route path='/products' element={<Products/>}/>
-                <Route path='/subscribtion' element={<Subscription />}/>
-            </Route>
-        </Route>
-
-        <Route path='/auth' element={<UnauthorizedPage />}>
-          <Route index element={<Login/>}/>
-          <Route path='/auth/register' element={<Register/>}/>
-        </Route>
-   </Routes>
-  )
-}
-
-export default Router
+export const router = createBrowserRouter([
+  {
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: "/",
+        element: <Navbar routes={routes} />, // passes nav links
+        children: [
+          { index: true, element: <Home /> },
+          { path: "about", element: <About /> },
+          { path: "products", element: <Products /> },
+          { path: "subscribtion", element: <Subscription /> },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <UnauthorizedPage />,
+    children: [
+      { index: true, element: <Login /> },
+      { path: "register", element: <Register /> },
+    ],
+  },
+]);
